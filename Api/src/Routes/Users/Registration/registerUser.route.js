@@ -10,7 +10,7 @@ const register = async (req, res) => {
     // Verificar si ya existe un usuario con el mismo correo electrónico
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
-      return res.status(400).json({ message: "Correo electrónico ya registrado" });
+      return res.status(400).json({ message: "Email already registered" });
     }
     
     // Encriptar contraseña
@@ -29,7 +29,7 @@ const register = async (req, res) => {
     res.json({ user });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Error al registrar usuario' });
+    res.status(500).json({ message: 'Failed to register user' });
   }
 };
 
