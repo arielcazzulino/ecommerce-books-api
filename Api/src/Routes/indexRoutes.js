@@ -17,6 +17,6 @@ router.get('/users/:userId', authMiddleware, getUserInfo);
 
 //inventory
 router.post('/add', authMiddleware, addProducts);
-router.put('/update', updateProductStock);
+router.put('/update/:id', authMiddleware, updateProductStock);
 
 export default router;
