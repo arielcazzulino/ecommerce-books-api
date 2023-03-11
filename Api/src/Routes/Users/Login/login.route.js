@@ -22,7 +22,7 @@ const login = async (req, res) => {
     }
 
     // Generar el token de autenticación
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ userId: user.id, isAdmin: user.isAdmin }, process.env.JWT_SECRET);
 
     res.json({ message: "Successful login", token});
   } catch (error) {

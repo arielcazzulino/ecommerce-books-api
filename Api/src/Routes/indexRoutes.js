@@ -5,6 +5,7 @@ import login from './Users/Login/login.route.js';
 import updateUserInfo from './Users/UpdateInfo/Update.route.js';
 import getUserInfo from './Users/GetInfo/GetInfo.route.js';
 import addProducts from './Inventory/addProducts.route.js';
+import updateProductStock from './Inventory/updateStock.route.js';
 
 const router = Router();
 
@@ -15,6 +16,7 @@ router.put('/users/:userId', authMiddleware, updateUserInfo);
 router.get('/users/:userId', authMiddleware, getUserInfo);
 
 //inventory
-router.post('/add', addProducts)
+router.post('/add', authMiddleware, addProducts);
+router.put('/update', updateProductStock);
 
 export default router;

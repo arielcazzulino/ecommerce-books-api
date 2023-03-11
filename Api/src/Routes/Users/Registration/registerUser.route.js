@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 const register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, isAdmin } = req.body;
 
     // Verificar si ya existe un usuario con el mismo correo electrónico
     const existingUser = await prisma.user.findUnique({ where: { email } });
@@ -21,6 +21,7 @@ const register = async (req, res) => {
     const user = await prisma.user.create({
       data: {
         name,
+        isAdmin,
         email,
         password: hashedPassword
       }
