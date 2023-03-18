@@ -2,7 +2,7 @@
 
 La API todavía está en desarrollo. Todo lo que encontrará en la siguiente documentación es funcional, pero el trabajo completo aún no ha sido terminado. 
 
-⚠️_______________________________________________________________________________________________________________⚠️
+_______________________________________________________________________________________________________________
 
 ## CONFIGURACIÓN:
 
